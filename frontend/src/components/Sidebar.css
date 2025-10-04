@@ -1,0 +1,114 @@
+/* ============================
+   Sidebar Container
+============================= */
+.sidebar {
+  width: 350px;
+  background-color: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================
+   Header Section
+============================= */
+.sidebar-header {
+  padding: 25px 20px 15px;
+  border-bottom: 2px solid #e3f2fd;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #0066CC;
+}
+
+/* ============================
+   Patient Card
+============================= */
+.patient-card {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #e3f2fd;
+}
+
+.patient-field {
+  margin-bottom: 15px;
+}
+
+.patient-field:last-child {
+  margin-bottom: 0;
+}
+
+.patient-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================
+   Field Value Styles
+============================= */
+.field-value {
+  padding: 10px 12px;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Highlighted Room Numbers */
+.field-value.highlight {
+  background: linear-gradient(135deg, #0066CC 0%, #4DA8FF 100%);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+}
+
+/* ============================
+   Embedded Dropdown Styling
+============================= */
+.field-value.dropdown {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-weight: 500;
+  color: #333;
+  width: 100%;
+  font-size: 0.95rem;
+  cursor: pointer;
+
+  /* Custom arrow icon */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35 50l35 40 35-40' stroke='%23333' stroke-width='15' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+/* ============================
+   Responsive Design
+============================= */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    max-height: 40vh;
+  }
+}

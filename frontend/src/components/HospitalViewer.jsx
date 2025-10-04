@@ -3,7 +3,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
 function HospitalViewer() {
-    const {scene} = useGLTF("./src/assets/hospital.glb")
+    const {scene} = useGLTF("./src/assets/first_patient.glb")
 
     return (
         <div style={{ width: '100%', height: '100%', display: 'flex' }}>
