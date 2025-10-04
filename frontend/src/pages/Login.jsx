@@ -6,7 +6,6 @@ import logo from '../assets/logo.png';
 // OR keep your relative path: import logo from '../assets/logo.png';
 
 function Login() {
-  const navigate = useNavigate();
   const [selectedHospital, setSelectedHospital] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
