@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import './Login.css';
 import logo from '../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [selectedHospital, setSelectedHospital] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const hospitals = [
     'Tampa General Hospital',
@@ -21,8 +23,11 @@ function Login() {
 
   const handleLogin = () => {
     if (selectedHospital && username && password) {
-      alert(`Welcome to ${selectedHospital}!`);
+      navigate("/home");
       console.log('Login successful:', { hospital: selectedHospital, username });
+    }
+    else {
+        alert("Please input all fields to login.");
     }
   };
 
