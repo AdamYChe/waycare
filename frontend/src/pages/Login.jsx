@@ -85,14 +85,14 @@ function Login() {
 
             {/* Username */}
             <div className="form-group">
-              <label htmlFor="username" className="form-label">Username</label>
+              <label htmlFor="username" className="form-label">Employee ID</label>
               <input
                 id="username"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="form-input"
-                placeholder="Enter your username"
+                placeholder="Employee ID"
                 required
               />
             </div>
@@ -123,10 +123,6 @@ function Login() {
           </div>
         </div>
 
-        {/* Bottom Tagline */}
-        <div className="bottom-tagline">
-          <p>🏥 Real-time navigation • 🗺️ Smart routing • 👨‍⚕️ Healthcare optimized</p>
-        </div>
       </div>
     </div>
   );
