@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Login.css';
+import logo from '../assets/logo.png';
 
 function Login() {
   const [selectedHospital, setSelectedHospital] = useState('');
@@ -18,8 +19,7 @@ function Login() {
     'University of South Florida Health'
   ];
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const handleLogin = () => {
     if (selectedHospital && username && password) {
       alert(`Welcome to ${selectedHospital}!`);
       console.log('Login successful:', { hospital: selectedHospital, username });
@@ -32,27 +32,7 @@ function Login() {
         {/* Logo and Title */}
         <div className="login-header">
           <div className="logo-container">
-            <svg width="120" height="120" viewBox="0 0 200 200" className="logo-svg">
-              {/* Medical Cross */}
-              <path d="M100 20 L120 20 L120 80 L180 80 L180 100 L120 100 L120 160 L100 160 L100 100 L40 100 L40 80 L100 80 Z" 
-                    fill="url(#blueGradient)" stroke="#0066CC" strokeWidth="3"/>
-              
-              {/* Heartbeat Line */}
-              <path d="M60 90 L75 90 L85 70 L95 110 L105 70 L115 90 L140 90" 
-                    fill="none" stroke="#0066CC" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-              
-              {/* Stethoscope Circle */}
-              <circle cx="100" cy="175" r="12" fill="white" stroke="#0066CC" strokeWidth="4"/>
-              <circle cx="100" cy="175" r="6" fill="#0066CC"/>
-              <line x1="100" y1="163" x2="100" y2="155" stroke="#0066CC" strokeWidth="4"/>
-              
-              <defs>
-                <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#4DA8FF"/>
-                  <stop offset="100%" stopColor="#0066CC"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src={logo} alt="WayCare Logo" className="logo-image" />
           </div>
           <h1 className="brand-title">WAYCARE</h1>
           <p className="brand-subtitle">Hospital Navigation Assistant</p>
@@ -62,7 +42,7 @@ function Login() {
         <div className="login-card">
           <h2 className="card-title">Welcome Back</h2>
           
-          <form onSubmit={handleLogin} className="login-form">
+          <div className="login-form">
             {/* Hospital Dropdown */}
             <div className="form-group">
               <label className="form-label">Select Hospital</label>
@@ -132,10 +112,10 @@ function Login() {
             </div>
 
             {/* Login Button */}
-            <button type="submit" className="login-button">
+            <button type="button" onClick={handleLogin} className="login-button">
               Login to WayCare
             </button>
-          </form>
+          </div>
 
           {/* Footer Info */}
           <div className="card-footer">

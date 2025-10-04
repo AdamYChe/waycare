@@ -32,7 +32,10 @@
   margin-bottom: 20px;
 }
 
-.logo-svg {
+.logo-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
   filter: drop-shadow(0 4px 6px rgba(0, 102, 204, 0.2));
 }
 
