@@ -9,7 +9,7 @@ function HospitalViewer() {
         <div style={{ width: '100%', height: '100%', display: 'flex' }}>
             <Canvas
                 shadows={true}
-                camera={{ position: [3, 3, 3], fov: 50 }}
+                camera={{ position: [25, 30, 0], fov: 50 }}
                 style = {{ flex: 1, background: "#666666" }}
             >
                 <ambientLight intensity={0.5}/>
