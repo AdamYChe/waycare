@@ -1,0 +1,157 @@
+/* Sidebar */
+.sidebar {
+  width: 350px;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 25px 20px 15px;
+  border-bottom: 2px solid #e3f2fd;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  color: #0066CC;
+  font-size: 1.4rem;
+}
+
+/* Patient Card */
+.patient-card {
+  padding: 20px;
+  background: #f8f9fa;
+  margin: 20px;
+  border-radius: 12px;
+  border: 2px solid #e3f2fd;
+}
+
+.patient-field {
+  margin-bottom: 15px;
+}
+
+.patient-field:last-child {
+  margin-bottom: 0;
+}
+
+.patient-field label {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.field-value {
+  padding: 10px 12px;
+  background: white;
+  border-radius: 6px;
+  color: #333;
+  font-weight: 500;
+  border: 1px solid #ddd;
+}
+
+.field-value.highlight {
+  background: linear-gradient(135deg, #0066CC 0%, #4DA8FF 100%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+}
+
+/* Route Section */
+.route-section {
+  padding: 20px;
+  border-top: 2px solid #e3f2fd;
+  margin-top: auto;
+}
+
+.route-section h3 {
+  margin: 0 0 15px 0;
+  color: #0066CC;
+  font-size: 1.2rem;
+}
+
+.route-info {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #e3f2fd;
+}
+
+.route-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 15px 0;
+  font-style: italic;
+}
+
+.sector-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sector-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.sector-item:hover {
+  border-color: #4DA8FF;
+  transform: translateX(5px);
+}
+
+.sector-item.active {
+  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+  border-color: #4CAF50;
+  color: white;
+}
+
+.sector-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #0066CC;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.sector-item.active .sector-number {
+  background: white;
+  color: #4CAF50;
+}
+
+.sector-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    max-height: 40vh;
+  }
+}
