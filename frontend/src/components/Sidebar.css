@@ -1,13 +1,18 @@
-/* Sidebar */
+/* ============================
+   Sidebar Container
+============================= */
 .sidebar {
   width: 350px;
-  background: white;
+  background-color: #fff;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
 
+/* ============================
+   Header Section
+============================= */
 .sidebar-header {
   padding: 25px 20px 15px;
   border-bottom: 2px solid #e3f2fd;
@@ -15,15 +20,17 @@
 
 .sidebar-header h2 {
   margin: 0;
-  color: #0066CC;
   font-size: 1.4rem;
+  color: #0066CC;
 }
 
-/* Patient Card */
+/* ============================
+   Patient Card
+============================= */
 .patient-card {
-  padding: 20px;
-  background: #f8f9fa;
   margin: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
   border-radius: 12px;
   border: 2px solid #e3f2fd;
 }
@@ -38,111 +45,61 @@
 
 .patient-field label {
   display: block;
-  font-size: 0.85rem;
-  color: #666;
   margin-bottom: 5px;
+  font-size: 0.85rem;
   font-weight: 600;
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
+/* ============================
+   Field Value Styles
+============================= */
 .field-value {
   padding: 10px 12px;
-  background: white;
+  background-color: #fff;
   border-radius: 6px;
+  border: 1px solid #ddd;
   color: #333;
   font-weight: 500;
-  border: 1px solid #ddd;
 }
 
+/* Highlighted Room Numbers */
 .field-value.highlight {
   background: linear-gradient(135deg, #0066CC 0%, #4DA8FF 100%);
-  color: white;
+  color: #fff;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
   border: none;
 }
 
-/* Route Section */
-.route-section {
-  padding: 20px;
-  border-top: 2px solid #e3f2fd;
-  margin-top: auto;
-}
-
-.route-section h3 {
-  margin: 0 0 15px 0;
-  color: #0066CC;
-  font-size: 1.2rem;
-}
-
-.route-info {
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 8px;
-  border: 2px solid #e3f2fd;
-}
-
-.route-note {
-  font-size: 0.85rem;
-  color: #666;
-  margin: 0 0 15px 0;
-  font-style: italic;
-}
-
-.sector-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.sector-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  background: white;
-  border-radius: 8px;
-  border: 2px solid #e0e0e0;
-  transition: all 0.3s ease;
-}
-
-.sector-item:hover {
-  border-color: #4DA8FF;
-  transform: translateX(5px);
-}
-
-.sector-item.active {
-  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
-  border-color: #4CAF50;
-  color: white;
-}
-
-.sector-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background: #0066CC;
-  color: white;
-  border-radius: 50%;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.sector-item.active .sector-number {
-  background: white;
-  color: #4CAF50;
-}
-
-.sector-name {
-  font-weight: 600;
+/* ============================
+   Embedded Dropdown Styling
+============================= */
+.field-value.dropdown {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-weight: 500;
+  color: #333;
+  width: 100%;
   font-size: 0.95rem;
+  cursor: pointer;
+
+  /* Custom arrow icon */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35 50l35 40 35-40' stroke='%23333' stroke-width='15' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
 }
 
-/* Responsive Design */
+/* ============================
+   Responsive Design
+============================= */
 @media (max-width: 1024px) {
   .sidebar {
     width: 300px;
