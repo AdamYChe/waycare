@@ -1,18 +1,13 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { useState } from 'react'
-import './App.css'
-import Login from './pages/Login'
-import Home from './pages/Home'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Login from './pages/Login.jsx'
+import Home from './pages/Home.jsx'
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/home" element={<Home/>} />
-        <Route path="/" element={<Login/>} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   )
 }
-
-export default App

@@ -1,30 +1,32 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
+// EITHER use alias:
 import logo from '../assets/logo.png';
+// OR keep your relative path: import logo from '../assets/logo.png';
 
 function Login() {
+  const navigate = useNavigate();
   const [selectedHospital, setSelectedHospital] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const hospitals = [
-    'Tampa General Hospital',
-    'Memorial Hospital',
-    'St. Joseph\'s Hospital',
-    'Moffitt Cancer Center',
-    'AdventHealth Tampa',
-    'James A. Haley Veterans Hospital',
-    'Tampa Community Hospital',
+    'Tampa General Hospital', 'Memorial Hospital', "St. Joseph's Hospital",
+    'Moffitt Cancer Center', 'AdventHealth Tampa',
+    'James A. Haley Veterans Hospital', 'Tampa Community Hospital',
     'University of South Florida Health'
   ];
 
   const handleLogin = () => {
     if (selectedHospital && username && password) {
-      alert(`Welcome to ${selectedHospital}!`);
-      console.log('Login successful:', { hospital: selectedHospital, username });
+      // optional: toast/alert
+      // alert(`Welcome to ${selectedHospital}!`);
+      navigate('/home', { state: { hospital: selectedHospital, username } });
     }
   };
+
 
   return (
     <div className="login-container">
