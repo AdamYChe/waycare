@@ -62,7 +62,7 @@ function Sidebar() {
             </div>
             <div className="sector-item active">
               <span className="sector-number">4</span>
-              <span className="sector-name">Room 405</span>
+              <span className="sector-name">Room 205</span>
             </div>
           </div>
         </div>
