@@ -3,11 +3,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png'; // or '../assets/logo.png'
 import Sidebar from '../components/Sidebar.jsx';
 import HospitalViewer from '../components/HospitalViewer.jsx';
+import { useState } from 'react';
 
 function Home() {
   const navigate = useNavigate();
   const { state } = useLocation() || {};
   const hospitalName = state?.hospital || 'Your Hospital';
+  const [patient, setPatient] = useState(null);
 
   const handleLogout = () => {
     // clear any session state if you add it later
@@ -37,8 +39,8 @@ function Home() {
 
       {/* Main Content */}
       <div className="main-content">
-        <Sidebar />
-        <HospitalViewer />
+        <Sidebar onSelect={setPatient}/>
+        <HospitalViewer object={patient}/>
       </div>
     </div>
   );

@@ -1,20 +1,28 @@
 import { useState } from 'react';
 import './Sidebar.css';
 
-function Sidebar() {
+function Sidebar({ onSelect }) {
   const patients = [
     {
+      name: '',
+      room: '',
+      nextRoom: '',
+      age: '',
+      gender: '',
+      condition: ''
+    },
+    {
       name: 'John Doe',
-      room: '405',
-      nextRoom: '410',
+      room: '302',
+      nextRoom: '313',
       age: '54',
       gender: 'Male',
       condition: 'Post-operative recovery'
     },
     {
       name: 'Jane Smith',
-      room: '302',
-      nextRoom: '305',
+      room: '305',
+      nextRoom: '207',
       age: '67',
       gender: 'Female',
       condition: 'Cardiac monitoring'
@@ -29,16 +37,16 @@ function Sidebar() {
     },
     {
       name: 'Allen Andrews',
-      room: '356',
-      nextRoom: '283',
+      room: '301',
+      nextRoom: '203',
       age: '25',
       gender: 'Male',
       condition: 'Broken knee'
     },
     {
       name: 'Mia Collins',
-      room: '230',
-      nextRoom: '345',
+      room: '210',
+      nextRoom: '106',
       age: '23',
       gender: 'Female',
       condition: 'Stretched ligment'
@@ -60,7 +68,10 @@ function Sidebar() {
           <select
             className="field-value dropdown"
             value={selectedPatientIndex}
-            onChange={(e) => setSelectedPatientIndex(Number(e.target.value))}
+            onChange={(e) => {
+              setSelectedPatientIndex(Number(e.target.value))
+              onSelect(patients[Number(e.target.value)])
+            }}
           >
             {patients.map((patient, index) => (
               <option key={index} value={index}>
